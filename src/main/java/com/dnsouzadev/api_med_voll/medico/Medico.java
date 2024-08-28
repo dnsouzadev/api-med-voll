@@ -8,7 +8,7 @@ import java.util.Objects;
 
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @Entity
-@Table
+@Table(name = "medicos")
 public class Medico {
 
     @Id
@@ -23,6 +23,22 @@ public class Medico {
 
     @Embedded
     private Endereco endereco;
+
+    public Medico(CadastroMedico medico) {
+        this.nome = medico.nome();
+        this.email = medico.email();
+        this.crm = medico.crm();
+        this.especialidade = medico.especialidade();
+        this.endereco = new Endereco(
+                medico.endereco().logradouro(),
+                medico.endereco().bairro(),
+                medico.endereco().cep(),
+                medico.endereco().cidade(),
+                medico.endereco().uf(),
+                medico.endereco().complemento(),
+                medico.endereco().numero()
+        );
+    }
 
     @Override
     public boolean equals(Object o) {
