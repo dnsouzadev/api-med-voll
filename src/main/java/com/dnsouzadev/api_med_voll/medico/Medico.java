@@ -2,6 +2,7 @@ package com.dnsouzadev.api_med_voll.medico;
 
 import com.dnsouzadev.api_med_voll.endereco.Endereco;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.*;
 
 import java.util.Objects;
@@ -53,5 +54,11 @@ public class Medico {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    public void atualizarInfo(@Valid DadosAtualizacaoMedico dados) {
+        if (dados.nome() != null) this.nome = dados.nome();
+        if (dados.telefone() != null) this.telefone = dados.telefone();
+        if (dados.endereco() != null) this.endereco.atualizarInfo(dados.endereco());
     }
 }
