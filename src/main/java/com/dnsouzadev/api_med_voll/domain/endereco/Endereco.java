@@ -1,6 +1,8 @@
-package com.dnsouzadev.api_med_voll.endereco;
+package com.dnsouzadev.api_med_voll.domain.endereco;
 
 import jakarta.persistence.Embeddable;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +21,9 @@ public class Endereco {
     private String uf;
     private String complemento;
     private String numero;
+
+    public Endereco(@NotNull @Valid DadosEndereco endereco) {
+    }
 
     public void atualizarInfo(DadosEndereco endereco) {
         if (endereco.logradouro() != null) this.logradouro = endereco.logradouro();

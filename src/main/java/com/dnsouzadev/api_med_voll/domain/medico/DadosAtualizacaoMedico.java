@@ -1,7 +1,6 @@
-package com.dnsouzadev.api_med_voll.medico;
+package com.dnsouzadev.api_med_voll.domain.medico;
 
-import com.dnsouzadev.api_med_voll.endereco.DadosEndereco;
-import jakarta.validation.Valid;
+import com.dnsouzadev.api_med_voll.domain.endereco.DadosEndereco;
 import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoMedico(

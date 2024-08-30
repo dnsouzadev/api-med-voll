@@ -1,8 +1,6 @@
-package com.dnsouzadev.api_med_voll.medico;
+package com.dnsouzadev.api_med_voll.domain.medico;
 
-import com.dnsouzadev.api_med_voll.endereco.Endereco;
-
-import java.io.Serializable;
+import com.dnsouzadev.api_med_voll.domain.endereco.Endereco;
 
 /**
  * DTO for {@link Medico}

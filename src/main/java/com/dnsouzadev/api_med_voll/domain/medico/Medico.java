@@ -1,6 +1,6 @@
-package com.dnsouzadev.api_med_voll.medico;
+package com.dnsouzadev.api_med_voll.domain.medico;
 
-import com.dnsouzadev.api_med_voll.endereco.Endereco;
+import com.dnsouzadev.api_med_voll.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.*;
