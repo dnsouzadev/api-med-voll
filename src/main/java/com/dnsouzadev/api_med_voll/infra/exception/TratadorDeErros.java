@@ -1,4 +1,4 @@
-package com.dnsouzadev.api_med_voll.infra;
+package com.dnsouzadev.api_med_voll.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
