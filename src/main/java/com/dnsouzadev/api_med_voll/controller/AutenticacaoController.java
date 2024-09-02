@@ -2,6 +2,7 @@ package com.dnsouzadev.api_med_voll.controller;
 
 import com.dnsouzadev.api_med_voll.domain.usuario.DadosAutenticacao;
 import com.dnsouzadev.api_med_voll.domain.usuario.Usuario;
+import com.dnsouzadev.api_med_voll.infra.security.DadosTokenJwt;
 import com.dnsouzadev.api_med_voll.infra.security.TokenService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,9 @@ public class AutenticacaoController {
         var token = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
         var authentication = manager.authenticate(token);
 
-        return ResponseEntity.ok(tokenService.gerarToken((Usuario) authentication.getPrincipal()));
+        var tokenjwt = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+
+        return ResponseEntity.ok(new DadosTokenJwt(tokenjwt));
     }
 
 }
