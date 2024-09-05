@@ -1,8 +1,10 @@
 package com.dnsouzadev.api_med_voll.domain.consulta.validacoes;
 
 import com.dnsouzadev.api_med_voll.domain.consulta.DadosAgendamentoConsulta;
+import org.springframework.stereotype.Component;
 
-public class ValidadorHorarioFuncionamentoClinica {
+@Component
+public class ValidadorHorarioFuncionamentoClinica implements ValidadorAgendamentoDeConsulta {
 
     public void validar(DadosAgendamentoConsulta dados) {
         var dataConsulta = dados.data();

@@ -19,6 +19,7 @@ public class PacienteController {
     @PostMapping
     @Transactional
     public void cadastrar(@RequestBody @Valid DadosCadastroPaciente dados) {
+        System.out.println(dados);
         repository.save(new Paciente(dados));
     }
 

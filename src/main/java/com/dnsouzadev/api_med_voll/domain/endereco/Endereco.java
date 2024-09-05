@@ -11,7 +11,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Embeddable
 public class Endereco {
     private String logradouro;
@@ -25,7 +24,17 @@ public class Endereco {
     public Endereco(@NotNull @Valid DadosEndereco endereco) {
     }
 
-    public void atualizarInfo(DadosEndereco endereco) {
+    public Endereco(String logradouro, String bairro, String cep, String cidade, String uf, String complemento, String numero) {
+        this.logradouro = logradouro;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.cidade = cidade;
+        this.uf = uf;
+        this.complemento = complemento;
+        this.numero = numero;
+    }
+
+    public void atualizarInformacoes(DadosEndereco endereco) {
         if (endereco.logradouro() != null) this.logradouro = endereco.logradouro();
         if (endereco.bairro() != null) this.bairro = endereco.bairro();
         if (endereco.cep() != null) this.cep = endereco.cep();
